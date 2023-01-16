@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #2980B9;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .container--flex {
+            display: flex;
+        }
+        
+        .flex-child {
+            flex: 1;
+            min-width: 50px;
+            min-height: 50px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mob Attack Calc</h1>
+    <div style="display: grid;">
+
+        <div class="container--flex">
+
+
+            <div id="target-stats" class="flex-child">
+                <div>Target stats(Enemy stats)</div>
+                <div>
+                    <label>Target Armor</label>
+                    <Input id="Damage_Resistance_Stat" value="1"></Input>
+                </div>
+                <div>
+                    <label>Damage Taken Modifier</label>
+                    <Input id="DAMAGE_TAKEN_MODIFIER" value="1"></Input>
+                </div>
+            </div>
+            <div id="caster-stats" class="flex-child">
+                <div>Caster stats(Attacker stats)</div>
+                <div>
+                    <label>Skill level</label>
+                    <Input id="skillLevel" value="1"></Input>
+                </div>
+                <div>
+                    <label>Skill mod</label>
+                    <Input id="skillMod" value="1"></Input>
+                </div>
+                <div>
+                    <label>Power Stat</label>
+                    <Input id="casterStrength" value="1"></Input>
+                </div>
+                <div>
+                    <label>Damge Dealt</label>
+                    <Input id="casterDamageModifier" value="1"></Input>
+                </div>
+                <div>
+                    <label>Critical Chance</label>
+                    <Input id="criticalChance" value="1"></Input>
+                </div>
+                <div>
+                    <label>Critical Power</label>
+                    <Input id="criticalPower" value="1"></Input>
+                </div>
+            </div>
+
+            <div id="general-stats" class="flex-child">
+                <div>General stats</div>
+                <div>
+                    <label>Base Damage</label>
+                    <Input id="dmg_base" value="1"></Input>
+                </div>
+                <div>
+                    <label>Max Damage</label>
+                    <Input id="dmg_max" value="1"></Input>
+                </div>
+                <div>
+                    <label>Damage Hitroll Modifier(Global Settings)</label>
+                    <Input id="DAMAGE_HITROLL_MODIFIER" value="35"></Input>
+                </div>
+                <div>
+                    <label>Flat Armor Damage Calculations(Global Settings)</label>
+                    <Input id="FLAT_ARMOR_DAMAGE_CALCULATIONS" type="checkbox" checked></Input>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="js/script.js "></script>
+
+        <button id="sumbit" style="width:100px" onclick="CalculateDamage() ">Attack</button>
+        <div>
+            <label>Damage Inflicted:</label>
+
+            <p id="result" style="white-space: pre-line; "></p>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
