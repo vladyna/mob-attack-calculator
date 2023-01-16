@@ -24,7 +24,7 @@ function CalculateDamage() {
     dmg = DamageTakenModifier(dmg);
     dmg = CriticalDamage(dmg);
     console.log(dmg);
-    document.getElementById("result").textContent = Math.round(Math.ceil(dmg));;
+    document.getElementById("result").textContent = "Rounded(atavism rounding):" + Math.round(Math.ceil(dmg)) + "; Raw Value: " + dmg;
 }
 
 function FetStats() {
